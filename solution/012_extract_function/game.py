@@ -1,8 +1,6 @@
 """
 the Dungeon Explorer game logic
 """
-import random
-
 from pydantic import BaseModel
 
 
@@ -11,17 +9,6 @@ class Teleporter(BaseModel):
     y: int
     target_x: int
     target_y: int
-
-
-class Fireball(BaseModel):
-    x: int
-    y: int
-    direction: str
-
-
-class Skeleton(BaseModel):
-    x: int
-    y: int
 
 
 class DungeonGame(BaseModel):
@@ -33,8 +20,6 @@ class DungeonGame(BaseModel):
     health: int = 150
     items: list[str] = []
     teleporters: list[Teleporter] = []
-    fireballs: list[Fireball] = []
-    skeletons: list[Skeleton] = []
 
 
 def get_next_position(x, y, direction):
@@ -72,7 +57,6 @@ def move_player(game, direction: str) -> None:
         game.status = "finished"
     
     check_teleporters(game)
-    check_collision(game)
 
 
 def check_teleporters(game):
@@ -82,38 +66,10 @@ def check_teleporters(game):
            game.y = t.target_y
 
 
-def check_collision(game):
-    for f in game.fireballs:
-        if f.x == game.x and f.y == game.y:
-            game.health -= 50
-    for s in game.skeletons:
-        if s.x == game.x and s.y == game.y:
-            game.health -= 10
-
-
 def update(game):
     # health check
-    if game.health <= 0:
+    if game.health == 0:
         game.status = "game over"
-
-    # move fireballs
-    for f in game.fireballs:
-        new_x, new_y = get_next_position(f.x, f.y, f.direction)
-        if game.level[new_y][new_x] in ".€kd":  # flies over coins and keys
-            f.x, f.y = new_x, new_y
-        elif f.direction == "right":
-            f.direction = "left"
-        elif f.direction == "left":
-            f.direction = "right"
-
-    # move skeletons
-    for s in game.skeletons:
-        direction = random.choice(["up", "down", "left", "right"])
-        new_x, new_y = get_next_position(s.x, s.y, direction)
-        if game.level[new_y][new_x] in ".€kd":  # flies over coins and keys
-            s.x, s.y = new_x, new_y
-
-    check_collision(game)
 
 
 def parse_level(level):
@@ -138,11 +94,5 @@ def start_game():
         ]),
         teleporters=[
             Teleporter(x=1, y=2, target_x=2, target_y=8),
-        ],
-        fireballs=[
-            Fireball(x=1, y=8, direction="right")
-        ],
-        skeletons=[
-            Skeleton(x=3, y=5)
         ]
     )

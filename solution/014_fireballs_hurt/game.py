@@ -1,8 +1,6 @@
 """
 the Dungeon Explorer game logic
 """
-import random
-
 from pydantic import BaseModel
 
 
@@ -19,11 +17,6 @@ class Fireball(BaseModel):
     direction: str
 
 
-class Skeleton(BaseModel):
-    x: int
-    y: int
-
-
 class DungeonGame(BaseModel):
     status: str = "running"
     x: int
@@ -34,7 +27,6 @@ class DungeonGame(BaseModel):
     items: list[str] = []
     teleporters: list[Teleporter] = []
     fireballs: list[Fireball] = []
-    skeletons: list[Skeleton] = []
 
 
 def get_next_position(x, y, direction):
@@ -72,7 +64,6 @@ def move_player(game, direction: str) -> None:
         game.status = "finished"
     
     check_teleporters(game)
-    check_collision(game)
 
 
 def check_teleporters(game):
@@ -80,15 +71,6 @@ def check_teleporters(game):
        if game.x == t.x and game.y == t.y:
            game.x = t.target_x
            game.y = t.target_y
-
-
-def check_collision(game):
-    for f in game.fireballs:
-        if f.x == game.x and f.y == game.y:
-            game.health -= 50
-    for s in game.skeletons:
-        if s.x == game.x and s.y == game.y:
-            game.health -= 10
 
 
 def update(game):
@@ -105,16 +87,8 @@ def update(game):
             f.direction = "left"
         elif f.direction == "left":
             f.direction = "right"
-
-    # move skeletons
-    for s in game.skeletons:
-        direction = random.choice(["up", "down", "left", "right"])
-        new_x, new_y = get_next_position(s.x, s.y, direction)
-        if game.level[new_y][new_x] in ".€kd":  # flies over coins and keys
-            s.x, s.y = new_x, new_y
-
-    check_collision(game)
-
+        if f.x == game.x and f.y == game.y:
+            game.health -= 50
 
 def parse_level(level):
     return [list(row) for row in level]
@@ -141,8 +115,5 @@ def start_game():
         ],
         fireballs=[
             Fireball(x=1, y=8, direction="right")
-        ],
-        skeletons=[
-            Skeleton(x=3, y=5)
         ]
     )

@@ -75,12 +75,6 @@ def draw(game, images):
     # draw teleporters
     for t in game.teleporters:
         draw_tile(frame, x=t.x, y=t.y, image=images["teleporter"])
-    # draw fireballs
-    for t in game.fireballs:
-        draw_tile(frame, x=t.x, y=t.y, image=images["fireball"])
-    # draw skeletons
-    for s in game.skeletons:
-        draw_tile(frame, x=s.x, y=s.y, image=images["skeleton"])
     # display coins
     draw_tile(frame, xbase=660, ybase=32, x=0, y=0, image=images["coin"])
     cv2.putText(frame,
@@ -114,12 +108,9 @@ def handle_keyboard(game):
 # game starts
 images = read_images()
 game = start_game()
-counter = 0
 while game.status == "running":
-    counter += 1
     draw(game, images)
-    if counter % 100 == 0:
-        update(game)
+    update(game)
     handle_keyboard(game)
 
 cv2.destroyAllWindows()

@@ -78,9 +78,6 @@ def draw(game, images):
     # draw fireballs
     for t in game.fireballs:
         draw_tile(frame, x=t.x, y=t.y, image=images["fireball"])
-    # draw skeletons
-    for s in game.skeletons:
-        draw_tile(frame, x=s.x, y=s.y, image=images["skeleton"])
     # display coins
     draw_tile(frame, xbase=660, ybase=32, x=0, y=0, image=images["coin"])
     cv2.putText(frame,

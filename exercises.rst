@@ -463,7 +463,7 @@ Add a new function to `game.py`:
 
    def update(game):
        # health check
-       if game.health == 0:
+       if game.health <= 0:
            game.status = "game over"
 
 Now you also need to call the `update()` function.
@@ -782,11 +782,11 @@ Complete the following code:
 .. code:: python3
 
    for t in game.teleporters:
-       if new_x == t.x and ...:
+       if game.x == t.x and ...:
            game.x = t.target_x
            ...
 
-As soon as you add the complete section to `move_player()`, your teleporter should start working!
+As soon as you add the complete section at the bottom of `move_player()`, your teleporter should start working!
 
 .. hint::
 
@@ -796,43 +796,287 @@ As soon as you add the complete section to `move_player()`, your teleporter shou
 Switch (Optional)
 =================
 
+Create a switch that opens a secret door.
+Implement the following:
+
+- the switch should replace one specific wall by an open door
+- create a switch class that holds the position of the wall
+- the switch is activated when you walk on it 
+- look for a switch tile on `opengameart.org <https://opengameart.org>`__
 
 
+Code Cleanup: Split a Function
+==============================
 
-- extract position class
+You may observe that the function `move_player()` has become quite long.
+Long function are harder to understand and are a frequent source of bugs.
+In this exercise, you will extract two shorter functions from the longer one.
 
-1. split functions. run test code
-- move classes into new module data_model.py
-- create function get_next_position
-- move it to module helpers.py
-- extract function get_map_tiles from get_tiles, move both to helpers
-- optional: extract Player class
+This coding strategy, called **refactoring**, uses the following pattern:
 
-9. fireball that moves
-- add Fireball class to data model
-- add fireball attribute to Game
-- implement move_fireball function
-- initialize game with fireball
-- create update method
-- call update in graphics regularly
-- update fireball so that it moves
-- add fireball in get_tiles
+1. run the tests
+2. edit the code
+3. run the tests again
 
-10. fireball hurts player. 
-- write check collision function
-- check collisions in update()
-- move move_fireball() and check_collision to monsters.py
+Run the tests
+-------------
 
-extra: healing potion
+To make sure that the program does what it should, run the tests before you start.
+Do this even if you built the test right before.
+Even a small thing can ruin everything.
 
-11. randomly moving skeleton
-- skeleton class
-- move_skeleton function
-- add skeletons to Game
-- update
-- draw skeletons
+The test runner should confirm everything is OK:
 
-13. multiple levels
+::
+
+    python -m pytest
+
+Edit the code
+-------------
+
+First, move the code for handling teleportation into a separate function.
+Give the function the following header:
+
+.. code:: python3
+
+   def check_teleporters(game):
+       ...
+
+Move the block of code for teleportation from `move_player()` to `check_teleporters()`.
+Then call the new function from `move_player()` exactly where you took the code from:
+
+.. code:: python3
+
+   check_teleporters(game)
+
+.. warning::
+
+    Before doing anything else, proceed with the following step.
+
+Run the tests again
+-------------------
+
+Now run the tests to make sure that you did not break anything crucial with:
+
+::
+
+    python -m pytest
+
+If it does not work, you need to fix the problem immediately or rewind your changes.
+
+.. hint::
+
+    It is also a good idea to run the game and see whether there is anything unusual.
+
+Extract another function
+------------------------
+
+Once the code is working, extract another function for calculating the position of the next tile.
+Follow the same procedure as above.
+Define a function with a `def` statement and a return at the end:
+
+.. code:: python3
+
+   def get_next_position(x, y, direction):
+       ...
+       return x, y
+
+Move the code that modifies coordinates into the new function, replacing `new_x` by `x` and `new_y` by `y`.
+Add a function call to `move_player()`:
+
+.. code:: python3
+
+   new_x, new_y = get_next_position(game.x, game.y, direction)
+
+In the end, everything should work as before.
+
+.. hint::
+
+    This change has no effect on the game itself.
+    But the new function will be useful as soon as we add more game elements that move around!
+
+
+Fireball!
+=========
+
+Now it is time for some serious action.
+You will add a fireball that moves back and forth in the dungeon.
+This is by far the most complex feature so far, but it can be done in small steps.
+Also, you have already created a lot of similar code that should help.
+The following steps are necessary:
+
+1. create a Fireball class
+2. add a fireball to the level
+3. draw the fireball
+4. move the fireball
+5. Slow down the fireball
+
+Create a Fireball class
+-----------------------
+
+You need a new class, so that the fireball can move independently.
+Also, this makes it possible to add many fireballs.
+
+Create a new class `Fireball` with the following attributes:
+
+- an x and y position
+- a direction indicating where the fireball will move, e.g. `"up"`
+
+The other classes should have enough examples that you can borrow from.
+
+Add a fireball to the level
+---------------------------
+
+The game needs to store the fireballs as a extra list.
+Add a new attribute to the `DungeonGame` class that is a list of fireball objects.
+You can borrow the strategy from the `Teleporter` class, the code should be very similar.
+
+Also, create a fireball when the level is created.
+Create a single fireball first.
+Decide on a starting position and a direction.
+
+.. hint::
+
+    The game should run without any visible changes at this point.
+
+Draw the fireball
+-----------------
+
+The drawing is not that different either.
+Copy the section in `draw()` that draws teleporters and draw `fireball.png` instead.
+
+.. hint::
+
+    Now you should see a fireball that does not move.
+
+Move the fireball
+-----------------
+
+The logic to move the fireball is as follows:
+
+- calculate the position where the fireball would move
+- if that square is free, move there
+- if not, turn around
+
+Implement these steps in the `update()` function:
+
+.. code:: python3
+
+    # move fireballs
+    for f in game.fireballs:
+        new_x, new_y = get_next_position(f.x, f.y, f.direction)
+        if game.level[new_y][new_x] in ".€k":  # flies over coins and keys
+            f.x, f.y = new_x, new_y
+
+You also need to take care of the situation when the fireball hits an obstacle.
+In that case, reverse the direction:
+
+.. code:: python3
+
+        elif f.direction == "right":
+            f.direction = "left"
+        ..
+
+Add the code for other direction changes you would like to have.
+
+.. hint::
+
+    It might be a good idea to move the code into a separate function.
+    But for now you should rejoice if you see a moving fireball!
+
+
+Slow down the fireball
+----------------------
+
+Depending on your machine, the fireball is either very fast or insanely, abysmally fast.
+For any human player to have a chance dodging it, you need to make the movement slower.
+
+A good place to control the speed of the game is in `main.py`. 
+We will simply call `update()` less frequently.
+
+Modify the `while` loop by adding a counter variable that counts the game cycles (or frames):
+
+.. code:: python3
+
+    counter = 0
+    while game.status == "running":
+        counter += 1
+
+Now you can use the modulus to call `update()` in every 100th cycle:
+
+.. code:: python3
+
+    if counter % 100 == 0:
+        update(game)
+
+Adjust the number until you have a speed that you think is good.
+
+Fireballs Hurt
+==============
+
+It is great to watch your fireballs fly around.
+However, they are not very dangerous.
+Let's make them more harmful.
+
+Add a collision check to the `update()` function, comparing the position of the player to that of each fireball.
+Complete the code:
+
+.. code:: python3
+
+    def check_collision(game):
+        for f in game.fireballs:
+            if f.x == game.x and ...:
+                game.health -= ...
+
+Decide **how much** damage a fireball should do.
+
+Then add a call to the `check_collision()` function to `update()`. This takes care of **fireballs moving into the player**.
+Add another call to `check_collision()` to the `move_player()` function, so that it also hurts when **the player moves into a fireball**.
+
+.. hint::
+
+    When the feature works, you may want to move some of the code in `update()` to a separate function.
+
+
+Healing Potion (Optional)
+=========================
+
+Add a healing potion to the dungeon that restores some health if you ran into spikes or got scorched by a few fireballs.
+
+Figure out by yourself how to do that.
+
+
+Skeletons
+=========
+
+Diversity is good! This also applies to the opponents in your dungeon.
+Let's add a randomly moving skeleton.
+
+For adding the skeleton, you can copy the mechanics of the fireball in most aspects.
+The only thing that is really different is the movement pattern.
+Add the following (somewhat dumb) random movement:
+
+.. code:: python3
+
+    import random  # add this on top of game.py
+
+    # move skeletons (in update())
+    for s in game.skeletons:
+        direction = random.choice(["up", "down", "left", "right"])
+        ...
+
+Don't forget to include the skeleton in the collision detection.
+
+.. hint::
+
+    By now there is a lot going on:
+
+    .. figure:: add_skeleton.png   
+
+
+Multiple Levels
+===============
+
 - move level to file levels.py
 - move SYMBOLS, parse_level and get_map_tiles to levels.py
 - create LEVEL class
@@ -842,6 +1086,19 @@ extra: healing potion
 - move monters to Level
 - extract start_level function
 
+More Monsters (Optional)
+========================
+
+Look through the tiles.
+Add another monster with slightly different properties, e.g.:
+
+- move half as fast
+- move through closed doors
+- do a lot of damage
+- do less damage if the player has an armor
+- spawn fireballs (the fireballs should disapper when they hit a wall)
+
+
 1.  title screen
 - add cutscene
 - add title screen
@@ -849,6 +1106,11 @@ extra: healing potion
 - edit README
 - add LICENSE
 - everything to GitHub
+
+- move move_fireball() and check_collision to monsters.py
+- move it to module helpers.py
+- move classes into new module data_model.py
+- extract position class
 
 -------------
 1.
