@@ -14,8 +14,7 @@ The tile graphics are taken from [https://opengameart.org/content/dungeon-crawl-
 An initial game was developed during my Advanced Python courses at the SRH Berlin.
 I would like to thank the following people for their active contributions:
 
-Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prabraj Singh, Andrei Madiarov
-
+Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prabraj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, 
 
 ## Contact
 
