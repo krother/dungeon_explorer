@@ -94,7 +94,7 @@ Add the following code section to the function `draw()`:
    You need to figure out where in the function to position these four lines.
    When everything works, the game should look like this:
 
-   .. figure:: floor_tiles.png
+   .. figure:: images/floor_tiles.png
 
 Stop at Walls
 =============
@@ -144,7 +144,7 @@ Add the following lines, replacing the one inside the two loops in `draw()`:
 
     When you run the code, you should notice that some floor tiles are missing:
 
-    .. image:: missing_floor_tiles.png
+    .. image:: images/missing_floor_tiles.png
 
 Now, add a **second if statement** similar to the first one that draws the walls.
 
@@ -152,7 +152,7 @@ Now, add a **second if statement** similar to the first one that draws the walls
 
     The result should look like this:
 
-    .. image:: wall_tiles.png
+    .. image:: images/wall_tiles.png
 
 Stop at walls
 -------------
@@ -428,7 +428,7 @@ You may want to experiment with the parameter values for color, thickness and fo
     Now you should see the number of coins in the display go up
     as you collect coins:
 
-    .. figure:: coin_display.png
+    .. figure:: images/coin_display.png
 
 
 Health
@@ -507,7 +507,7 @@ Complete the gap with an image of your choice:
 
     The outcome could look like this:
 
-    .. figure:: health_bar.png
+    .. figure:: images/health_bar.png
 
 
 Traps (Optional)
@@ -528,7 +528,7 @@ Implement the following:
 
    The outcome could look like this:
 
-   .. figure:: add_traps.png
+   .. figure:: images/add_traps.png
 
 Code cleanup: Drawing Images
 ============================
@@ -647,7 +647,7 @@ To draw items in multiple rows of 2 items each use the following loop in `draw()
 
    Multiple keys in an inventory could look like this:
 
-   .. figure:: add_keys.png
+   .. figure:: images/add_keys.png
 
    If you like, you might create multiple keys as long as they have different symbols and names: `b:blue_key`, `r:red_key` etc.
 
@@ -702,7 +702,7 @@ However, you may want to use the following expression instead of two separate `i
 
     The outcome should look like this:
 
-    .. figure:: door_opened.png
+    .. figure:: images/door_opened.png
 
 
 Teleporters 
@@ -770,7 +770,7 @@ In the `draw()` function, add the following paragraph **after** drawing the leve
 
     Now you should see the teleporter. Although you can walk into it, it does not teleport anything:
 
-    .. figure:: add_teleporter.png
+    .. figure:: images/add_teleporter.png
 
 Teleport the player
 -------------------
@@ -949,6 +949,8 @@ Copy the section in `draw()` that draws teleporters and draw `fireball.png` inst
 
     Now you should see a fireball that does not move.
 
+    .. figure:: images/add_fireball.png
+
 Move the fireball
 -----------------
 
@@ -1071,7 +1073,7 @@ Don't forget to include the skeleton in the collision detection.
 
     By now there is a lot going on:
 
-    .. figure:: add_skeleton.png   
+    .. figure:: images/add_skeleton.png   
 
 
 Multiple Levels
