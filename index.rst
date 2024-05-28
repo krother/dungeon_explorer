@@ -45,7 +45,6 @@ Contents
    chapters/switch.rst
    chapters/split_function.rst
    chapters/fireballs.rst
-   chapters/fireballs_hurt.rst
    chapters/healing_potion.rst
    chapters/skeletons.rst
    chapters/levels.rst
