@@ -54,6 +54,9 @@ Contents
    chapters/title_screen.rst
 
 
+.. topic:: Source Code
+
+   `github.com/krother/dungeon_explorer <https://github.com/krother/dungeon_explorer>`__
 
 License
 -------
