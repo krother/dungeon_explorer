@@ -94,6 +94,8 @@ Second, modify the `if` statements so that they modify the new position instead:
 Third, check for floors in the new position. For that you need to look up a tile in `game.level`.
 Use **indexing**, indicated by the square brackets. Note that the y coordinate goes first:
 
+.. code:: python3
+ 
     if game.level[new_y][new_x] == ".":
         game.x = new_x
         game.y = new_y
@@ -102,7 +104,7 @@ If the tile contains a wall, `game.x` and `game.y` will not get updated. So noth
 
 .. hint::
 
-    Run the game. You should see that the player cannot move into walls any mor.
+    Run the game. You should see that the player cannot move into walls any more.
 
 
 Extra: Fountain

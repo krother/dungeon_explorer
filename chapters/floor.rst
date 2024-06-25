@@ -1,6 +1,10 @@
 Draw the Floor
 ==============
 
+.. topic:: Goal
+
+   Draw the floor of the dungeon on the screen.
+
 In this exercise, we will make the character walk on a stone floor.
 To do so, we need to add a representation of the dungeon to the game data.
 
@@ -60,19 +64,19 @@ But we will add other things soon.
 
 .. hint::
 
-    When you run the program, it the character should move.
+    When you run the program, the character should move.
     However, you cannot see the floor yet.
 
 Draw floor tiles
 ----------------
 
 The last detail is to draw the floor.
-For every floor tile, we will draw the image `floor.png`.
-The module responsible for the graphics is `main.py`.
+For every floor tile, we will draw the image ``floor.png``.
+The module responsible for the graphics is ``main.py``.
 We need to explicitly draw *every tile in every row*.
 This is done by a loop within a loop.
 
-Add the following code section to the function `draw()`:
+Add the following code section to the function ``draw()``:
 
 .. code:: python3
 
@@ -83,7 +87,7 @@ Add the following code section to the function `draw()`:
 
 .. hint::
 
-   You need to figure out where in the function to position these four lines.
+   You need to figure out where in the ``draw()`` function to position these four lines.
    When everything works, the game should look like this:
 
    .. figure:: ../images/floor_tiles.png

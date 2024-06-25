@@ -18,7 +18,7 @@ As a beginner, you will probably need some guidance during this tutorial.
 If you would like to start learning Python by yourself, check out the material on `www.academis.eu/python_basics/ <https://www.academis.eu/python_basics/>`__
 
 With some experience you can work through the exercises on your own
-and come up with new, cool features on your own.
+and come up with new, cool features.
 You might also discover situations where you can start trying out advanced development techniques, such as testing, refactoring and OOP patterns.
 
 In both cases, I hope you have fun creating a complete Python game.
