@@ -68,7 +68,7 @@ Complete the gap with an image of your choice:
 
 .. code:: python3
 
-   for i in range(game.healt):
+   for i in range(game.health):
        draw_tile(frame, xbase=620, ybase=100, x=i, y=0, ...)
 
 .. hint::
