@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 from game import start_game, move_player
 
+TILE_PATH = os.path.split(__file__)[0] + '/tiles'
 
 # title of the game window
 GAME_TITLE = "Dungeon Explorer"
@@ -39,8 +40,8 @@ def read_image(filename: str) -> np.ndarray:
 
 def read_images():
     return {
-        filename[:-4]: read_image(os.path.join("tiles", filename))
-        for filename in os.listdir("tiles")
+        filename[:-4]: read_image(os.path.join(TILE_PATH, filename))
+        for filename in os.listdir(TILE_PATH)
         if filename.endswith(".png")
     }
 
@@ -71,12 +72,14 @@ def handle_keyboard(game):
         move_player(game, MOVES[key])
 
 
-# game starts
-images = read_images()
-game = start_game()
-while game.status == "running":
+def main():
+    images = read_images()
+    game = start_game()
+    while game.status == "running":
+        draw(game, images)
+        handle_keyboard(game)
 
-    draw(game, images)
-    handle_keyboard(game)
+    cv2.destroyAllWindows()
 
-cv2.destroyAllWindows()
+if __name__ == '__main__':
+    main()
