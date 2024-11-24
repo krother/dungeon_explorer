@@ -40,13 +40,13 @@ Replace the type definition in the `DungeonGame` class from:
 
 .. code:: python3
 
-    level = list[str]
+    level: list[str]
 
 to a **list of lists of single characters** or:
 
 .. code:: python3
 
-    level = list[list[str]]
+    level: list[list[str]]
 
 Theoretically, you could now create your level in the `start_game()` function by making each tile a single string:
 
