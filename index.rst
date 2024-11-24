@@ -53,6 +53,17 @@ Contents
    chapters/title_screen.rst
 
 
+Advanced Structures
+-------------------
+
+.. toctree::
+   :maxdepth: 2
+   :titlesonly:
+
+   chapters/design_patterns/project_structure.rst
+   chapters/design_patterns/README.rst
+
+
 .. topic:: Source Code
 
    `github.com/krother/dungeon_explorer <https://github.com/krother/dungeon_explorer>`__
