@@ -48,6 +48,7 @@ def main():
             break
         if key in MOVES:
             game.move_player(MOVES[key])
+        print(game.model_dump())
 
 
 if __name__ == "__main__":

@@ -13,7 +13,7 @@ class Monster(BaseModel):
     move_pattern: Callable
     __gen: Generator | None = None
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):  # args is a Sequence or Iterable, kwargs is a dict
         super().__init__(*args, **kwargs)
         self.__gen = self.move_pattern(self.position)
 

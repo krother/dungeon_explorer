@@ -5,7 +5,7 @@ graphics engine for 2D games
 import cv2
 
 from game import DungeonGame
-from graphics import read_all_images, draw
+from factory import draw
 
 # map keyboard keys to move commands
 MOVES = {
@@ -26,9 +26,8 @@ def handle_keyboard(game: DungeonGame):
 
 
 def main():
-    images = read_all_images()
     game = DungeonGame(
-        x=8,
+        x=4,
         y=1,
         level=[
             "##########",
@@ -45,7 +44,7 @@ def main():
     )
     game.start_game()
     while game.status == "running":
-        draw(game, images)
+        draw(game)
         handle_keyboard(game)
 
     cv2.destroyAllWindows()
