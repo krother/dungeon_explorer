@@ -62,6 +62,7 @@ Advanced Structures
 
    chapters/design_patterns/project_structure.rst
    chapters/design_patterns/README.rst
+   chapters/design_patterns/web.rst
 
 
 .. topic:: Source Code
