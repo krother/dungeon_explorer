@@ -11,7 +11,7 @@ from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from pydantic import BaseModel  
+from pydantic import BaseModel
 
 user_db = {
     "ada": {
@@ -88,11 +88,6 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
         raise HTTPException(status_code=400, detail="Incorrect username or password")
 
     return {"access_token": user.username, "token_type": "bearer"}
-
-
-@app.get("/items/")
-async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
-    return {"token": token}
 
 
 @app.get("/userinfo")
