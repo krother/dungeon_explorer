@@ -10,6 +10,7 @@
    factory.rst
    iterator.rst
    decorator.rst
+   adapter.rst
    observer.rst
    more.rst
 

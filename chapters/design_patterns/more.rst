@@ -22,16 +22,6 @@ Add a pause key that changes the state from the running game to the paused state
 
 ----
 
-The Adapter Pattern
-===================
-
-Write a custom monster that has a different interface than the monsters you already have.
-Implement an adapter class that wraps the monster but inherits from your usual Monster class.
-
-Also, write a mapper function that converts the attributes of one class to another.
-
-----
-
 The Builder Pattern
 ===================
 
