@@ -31,6 +31,7 @@ Contents
    :maxdepth: 2
    :titlesonly:
 
+   chapters/installation.rst
    chapters/prototype.rst
    chapters/floor.rst
    chapters/walls.rst
@@ -51,18 +52,6 @@ Contents
    chapters/more_monsters.rst
    chapters/music.rst
    chapters/title_screen.rst
-
-
-Advanced Structures
--------------------
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   chapters/design_patterns/project_structure.rst
-   chapters/design_patterns/README.rst
-   chapters/design_patterns/web.rst
 
 
 .. topic:: Source Code
