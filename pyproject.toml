@@ -1,0 +1,14 @@
+[project]
+name = "dungeon-explorer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "sphinx",
+    "sphinx-design",
+    "sphinx-copybutton",
+    "myst-parser",
+    "furo",
+    "sphinxcontrib-svg2pdfconverter[CairoSVG]", 
+]
