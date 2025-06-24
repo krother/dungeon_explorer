@@ -13,4 +13,5 @@
    adapter.rst
    observer.rst
    more.rst
+   web.rst
 

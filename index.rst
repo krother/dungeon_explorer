@@ -54,6 +54,15 @@ Contents
    chapters/music.rst
    chapters/title_screen.rst
 
+Advanced Topics
+---------------
+
+.. toctree::
+   :maxdepth: 1
+   :titlesonly:
+
+   chapters/design_patterns/README.rst
+   chapters/lesson_plans.rst
 
 .. topic:: Source Code
 
@@ -62,7 +71,7 @@ Contents
 License
 -------
 
-© 2024 Dr. Kristian Rother
+© 2025 Dr. Kristian Rother
 
 The Python code is distributed under the conditions of the MIT License. See :download:`LICENSE.TXT` for details
 
@@ -76,8 +85,7 @@ The tile graphics are taken from `opengameart.org/content/dungeon-crawl-32x32-ti
    An initial game was developed during my Advanced Python courses at the SRH Berlin see `github.com/krother/ams_dungeon_explorer <https://github.com/krother/ams_dungeon_explorer>`__.
    I would like to thank the following people for their active contributions:
    
-   Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prab
-   raj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, 
+   Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prabraj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Sasha Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh
 
 Contact
 -------
