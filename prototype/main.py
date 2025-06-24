@@ -64,10 +64,11 @@ def clean_moves(game, moves):
     for m in moves:
         if m.progress * max(abs(m.speed_x), abs(m.speed_y)) < TILE_SIZE:
             result.append(m)
-        elif m.finished is not None:
-            m.finished(game)
+        else:
+            m.complete = True
+            if m.finished is not None:
+                m.finished(game)
     return result
-
 
 def is_player_moving(moves):
     return any([m for m in moves if m.tile == "player"])

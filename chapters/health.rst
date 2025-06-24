@@ -8,47 +8,34 @@ Let's add **health** as a game element.
 A basic implementation needs the following:
 
 1. add a health attribute
-2. perform a regular health check that could end the game
+2. make it possible to take damage
 3. draw a health bar
 
 Health attribute
 ----------------
 
-Add a new attribute `health` to the `DungeonGame` class.
-It should have the type `int`. Set an initial value that you decide.
+Add a new attribute ``health`` to the ``DungeonGame`` class.
+It should have the type ``int``. Set an initial value that you decide.
 
-Regular health check
---------------------
+Take damage
+-----------
 
-The game should check regularly whether the health is still positive.
-If the health becomes zero, the game should end.
-This is a good opportunity to introduce an `update()` function.
-It will be useful for other recurrent tasks later.
-
-Add a new function to `game.py`:
+In the game it should be possible to lose health.
+If the health becomes zero, the game ends.
+Add this as a simple function in ``game.py``:
 
 .. code:: python3
 
-   def update(game):
-       # health check
+   def take_damage(game):
+       game.health -= 1
        if game.health <= 0:
            game.status = "game over"
 
-Now you also need to call the `update()` function.
-Add a call in `main.py` in the main event loop after the drawing:
-
-.. code:: python3
-
-    draw(game, images)
-    update(game)
-    ...
-
-You also need to import the new function on top of `main.py`
 
 .. hint::
 
-    The function has no effect on the game yet.
-    You will only see it when you add something that actually decreases the health.
+    This function has no effect on the game yet.
+    We will call it in the next chapter.
 
 Draw a health bar
 -----------------

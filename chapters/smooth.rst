@@ -8,7 +8,7 @@ This makes the drawing more complex. What you want to happen is something like t
 2. set a counter to 0
 3. draw the player figure at the position + counter
 4. increase the counter by one
-5. repeat from 3. until the figure has completed its Movement
+5. repeat from 3. until the figure has completed its movement
 
 This gets more complicated, because other things might happen in the meantime: the player presses another key that should be executed once the movement completes, or monsters move around as well.
 The code in `main.py` can handle this kind of situation already.
@@ -39,6 +39,7 @@ Insert the following code:
         speed_x: int
         speed_y: int
         progress: int = 0
+        complete: bool = False
         finished: Callable = None
 
 .. warning::
