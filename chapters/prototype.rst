@@ -43,7 +43,9 @@ and type:
 Execute the prototype
 ---------------------
 
-Open a terminal in the folder with the prototype code. Run the game with:
+Open the file ``main.py`` in VS Code and press the **Run** button (▶️).
+
+Alternatively, open a terminal in the folder with the prototype code. Run the game with:
 
 ::
 

@@ -36,6 +36,7 @@ Contents
    chapters/floor.rst
    chapters/walls.rst
    chapters/stairs.rst
+   chapters/smooth.rst
    chapters/coins.rst
    chapters/health.rst
    chapters/traps.rst
