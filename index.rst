@@ -53,6 +53,7 @@ Contents
    chapters/more_monsters.rst
    chapters/music.rst
    chapters/title_screen.rst
+   chapters/explosions.rst
 
 Advanced Topics
 ---------------

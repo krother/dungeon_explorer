@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Dungeon Explorer'
-copyright = '2024, Kristian Rother'
+copyright = '2025, Dr. Kristian Rother'
 author = 'Kristian Rother'
 release = '1.0'
 html_title = f"{project}"
