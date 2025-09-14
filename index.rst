@@ -52,19 +52,6 @@ Contents
    chapters/music.rst
    chapters/title_screen.rst
 
-
-Advanced Structures
--------------------
-
-.. toctree::
-   :maxdepth: 2
-   :titlesonly:
-
-   chapters/design_patterns/project_structure.rst
-   chapters/design_patterns/README.rst
-   chapters/design_patterns/web.rst
-
-
 .. topic:: Source Code
 
    `github.com/krother/dungeon_explorer <https://github.com/krother/dungeon_explorer>`__
@@ -72,7 +59,7 @@ Advanced Structures
 License
 -------
 
-© 2024 Dr. Kristian Rother
+© 2025 Dr. Kristian Rother
 
 The Python code is distributed under the conditions of the MIT License. See :download:`LICENSE.TXT` for details
 
@@ -83,11 +70,12 @@ The tile graphics are taken from `opengameart.org/content/dungeon-crawl-32x32-ti
 
 .. topic:: Contributors
 
-   An initial game was developed during my Advanced Python courses at the SRH Berlin see `github.com/krother/ams_dungeon_explorer <https://github.com/krother/ams_dungeon_explorer>`__.
+   An initial game was developed during my Advanced Python courses at the SRH Berlin .
+   It was further refined at my courses at TUB-CO.
    I would like to thank the following people for their active contributions:
    
    Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prab
-   raj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, 
+   raj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, Ole Fritko, Aleksandr Iwanovsky.
 
 Contact
 -------

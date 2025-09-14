@@ -10,12 +10,13 @@ class DungeonGame(BaseModel):
     y: int
 
 
-def move_player(game, direction: str) -> None:
+def move_player(game: DungeonGame, direction: str) -> None:
     """Things that happen when the player walks on stuff"""
     if direction == "right":
         game.x += 1
     elif direction == "left":
         game.x -= 1
+    ...
 
 
 def start_game():
