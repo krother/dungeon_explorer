@@ -1,6 +1,8 @@
 Skeletons
 =========
 
+.. figure:: ../images/skeleton.png
+
 Diversity is good! This also applies to the opponents in your dungeon.
 Let's add a randomly moving skeleton.
 

@@ -2,6 +2,8 @@
 Exit Stairs
 ===========
 
+.. figure:: ../images/stairs.png
+
 Let's add stairs to the dungeon.
 When the player steps on the stairs, the game should finish.
 You need to take care of three thing:

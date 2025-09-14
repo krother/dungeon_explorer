@@ -1,6 +1,8 @@
 Fireballs
 =========
 
+.. figure:: ../images/fireball.png
+
 Now it is time for some serious action.
 You will add a fireball that moves back and forth in the dungeon.
 This is by far the most complex feature so far, but it can be done in small steps.

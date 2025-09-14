@@ -1,6 +1,8 @@
 Collect Coins
 =============
 
+.. figure:: ../images/chest.png
+
 In this chapter, you will add gold coins to the dungeon that the player can collect.
 This feature comes with a bit more hidden complexity.
 The following steps are necessary:

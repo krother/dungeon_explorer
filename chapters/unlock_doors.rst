@@ -2,6 +2,8 @@
 Unlock Doors
 ============
 
+.. figure:: ../images/door.png
+
 Let's use the keys to open doors.
 In this exercise, you will place closed doors on the map.
 Keys in the inventory can be used to open them. Each key works only once.
