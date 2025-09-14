@@ -55,6 +55,14 @@ You should see a screen where you can move a character with the keys **A and D**
 
 .. image:: ../images/prototype.png
 
+The grid model
+--------------
+
+To understand what is going on, it is helpful to know that everything in your dungeon will have x and y coordinates.
+Most of the time, you will use coordinates in a **x/y grid that refers to positions in the dungeon**, not pixels on the screen.
+The top left position is `0/0`:
+
+.. figure:: ../images/grid_model.png
 
 Review the code
 ---------------
