@@ -54,11 +54,40 @@ def draw_tile(frame, x, y, image, xbase=0, ybase=0):
     frame[ypos : ypos + TILE_SIZE, xpos : xpos + TILE_SIZE] = image
 
 
-def draw(game, images):
+def draw_move(frame, move, images):
+    draw_tile(frame, x=move.from_x, y=move.from_y, image=images[move.tile], xbase=move.progress * move.speed_x, ybase=move.progress * move.speed_y)
+    move.progress += 1
+
+
+def clean_moves(game, moves):
+    result = []
+    for m in moves:
+        if m.progress * max(abs(m.speed_x), abs(m.speed_y)) < TILE_SIZE:
+            result.append(m)
+        else:
+            m.complete = True
+            if m.finished is not None:
+                m.finished(game)
+    return result
+
+def is_player_moving(moves):
+    return any([m for m in moves if m.tile == "player"])
+
+
+def draw(game, images, moves):
     # initialize screen
     frame = np.zeros((SCREEN_SIZE_Y, SCREEN_SIZE_X, 3), np.uint8)
+
     # draw player
-    draw_tile(frame, x=game.x, y=game.y, image=images["player"])
+    while game.moves:
+        moves.append(game.moves.pop())
+    if not is_player_moving(moves):
+        draw_tile(frame=frame, x=game.x, y=game.y, image=images["player"])
+    
+    # draw everything that moves
+    for m in moves:
+        draw_move(frame=frame, move=m, images=images)
+
     # display complete image
     cv2.imshow(GAME_TITLE, frame)
 
@@ -68,16 +97,21 @@ def handle_keyboard(game):
     key = chr(cv2.waitKey(1) & 0xFF)
     if key == "q":
         game.status = "exited"
-    if key in MOVES:
-        move_player(game, MOVES[key])
+    return MOVES.get(key)
 
 
 def main():
     images = read_images()
     game = start_game()
+    queued_move = None
+    moves = []
     while game.status == "running":
-        draw(game, images)
-        handle_keyboard(game)
+        draw(game, images, moves)
+        moves = clean_moves(game, moves)
+        queued_move = handle_keyboard(game)
+        if not is_player_moving(moves):
+            move_player(game, queued_move)
+
 
     cv2.destroyAllWindows()
 

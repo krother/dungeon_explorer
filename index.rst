@@ -31,10 +31,12 @@ Contents
    :maxdepth: 2
    :titlesonly:
 
+   chapters/installation.rst
    chapters/prototype.rst
    chapters/floor.rst
    chapters/walls.rst
    chapters/stairs.rst
+   chapters/smooth.rst
    chapters/coins.rst
    chapters/health.rst
    chapters/traps.rst
@@ -51,6 +53,7 @@ Contents
    chapters/more_monsters.rst
    chapters/music.rst
    chapters/title_screen.rst
+   chapters/explosions.rst
 
 .. topic:: Source Code
 
@@ -74,8 +77,7 @@ The tile graphics are taken from `opengameart.org/content/dungeon-crawl-32x32-ti
    It was further refined at my courses at TUB-CO.
    I would like to thank the following people for their active contributions:
    
-   Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prab
-   raj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, Ole Fritko, Aleksandr Iwanovsky.
+   Omar Saleh, Sultan Mirzoev, Ibrahim Khalil, Martin Esposito, Abdullah Aljamal, Chanhwan Park, Aritha Bandara, Godfrey Rukundo, Hilary Mubwandarikwa, Jonathan Estephan, Prabraj Singh, Andrei Madiarov, Muhammad Mujtaba Ahmed, Nair Roshan, Arnold Joseph, Samuel Malayil Verghese, Karan Zaveri, Harshetha Murthy, Shreyaasri Prakash, Pradyumna SR, Venkat Chavan, Chethan DV, Bhavya Babuta, Deepshikha, Francisco Saavedra Gonzalez, Azad Aliyev, German Sarychev, Juma Buge Abbas, Aleksandr Rykov, Chen-Yu Liu, Varun Shah, Hemanth Kumar Karthikeyan, Khushal Khare, Nikhil Gadekar, Ipshita Singh, Ole Fritko, Aleksandr Iwanovsky.
 
 Contact
 -------

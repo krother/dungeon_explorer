@@ -12,14 +12,13 @@ Add the following (somewhat dumb) random movement:
 
     import random  # add this on top of game.py
 
-    # move skeletons (in update())
-    for s in game.skeletons:
-        direction = random.choice(["up", "down", "left", "right"])
+    def move_skeleton(game, skeleton):  # called by update!
+        skeleton.direction = random.choice(["up", "down", "left", "right"])
         ...
 
-Don't forget to include the skeleton in the collision detection.
+Don't forget to include the skeleton in the collision detection as well.
 
-.. hint::
+.. note::
 
     By now there is a lot going on:
 
