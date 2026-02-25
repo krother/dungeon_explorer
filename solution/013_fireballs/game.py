@@ -75,7 +75,7 @@ def check_teleporters(game):
 
 def update(game):
     # health check
-    if game.health == 0:
+    if game.health <= 0:
         game.status = "game over"
 
     # move fireballs

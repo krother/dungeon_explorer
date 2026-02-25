@@ -5,6 +5,7 @@ import os
 import numpy as np
 import cv2
 from game import start_game, move_player, update
+TILE_PATH = os.path.split(__file__)[0] + '/tiles'
 
 
 # title of the game window
@@ -49,8 +50,8 @@ def read_image(filename: str) -> np.ndarray:
 
 def read_images():
     return {
-        filename[:-4]: read_image(os.path.join("tiles", filename))
-        for filename in os.listdir("tiles")
+        filename[:-4]: read_image(os.path.join(TILE_PATH, filename))
+        for filename in os.listdir(TILE_PATH)
         if filename.endswith(".png")
     }
 

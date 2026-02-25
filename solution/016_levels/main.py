@@ -5,6 +5,7 @@ import os
 import numpy as np
 import cv2
 from game import start_game, move_player, update
+TILE_PATH = os.path.split(__file__)[0] + '/tiles'
 
 
 # title of the game window
@@ -50,8 +51,8 @@ def read_image(filename: str) -> np.ndarray:
 
 def read_images():
     return {
-        filename[:-4]: read_image(os.path.join("tiles", filename))
-        for filename in os.listdir("tiles")
+        filename[:-4]: read_image(os.path.join(TILE_PATH, filename))
+        for filename in os.listdir(TILE_PATH)
         if filename.endswith(".png")
     }
 
@@ -77,8 +78,8 @@ def draw(game, images):
     for t in game.current_level.teleporters:
         draw_tile(frame, x=t.x, y=t.y, image=images["teleporter"])
     # draw fireballs
-    for t in game.current_level.fireballs:
-        draw_tile(frame, x=t.x, y=t.y, image=images["fireball"])
+    for f in game.current_level.fireballs:
+        draw_tile(frame, x=f.x, y=f.y, image=images["fireball"])
     # draw skeletons
     for s in game.current_level.skeletons:
         draw_tile(frame, x=s.x, y=s.y, image=images["skeleton"])
