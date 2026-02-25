@@ -23,7 +23,7 @@ Finally, replace the call to `draw()` inside the while loop with:
 
 .. code:: python3
 
-    frame = draw(game, images, moves)
+    frame = draw(game, images)
     out.write(frame)
 
 Run the code and see if a video gets written.

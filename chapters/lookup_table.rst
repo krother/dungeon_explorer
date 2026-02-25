@@ -13,7 +13,7 @@ When you read the code for the `draw()` function, you might notice that there ar
     if tile == "#":
         draw_tile(frame, x=x, y=y, image=images["wall"])
 
-This code is unneccessarily long. The problem also becomes worse, the more different tiles you add.
+This code is unnecessarily long. The problem also becomes worse, the more different tiles you add.
 The `if` statements only differ in the character and image they map to each other.
 
 Extract a dictionary

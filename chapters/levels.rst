@@ -46,7 +46,7 @@ Additionally, you need an attribute in `DungeonGame` that refers to the current 
 
         current_level: Level
 
-You also need to separate the two in the `start_level()` function.
+You also need to separate the two in the `start_game()` function.
 Define the level object first:
 
 .. code:: python3
@@ -98,7 +98,7 @@ Change it to:
         if game.current_level.level[new_y][new_x] in ".€kd":
             ...
 
-Do the same for all attributes of the `Level` class in `update()`, `move_player()`, `check_collision()` and `draw()`.
+Do the same for all attributes of the `Level` class in `update()`, `move_player()`, `check_collision()` and `draw()`, e.g. the teleporters.
 If you extracted other functions, they may need to be changed, too.
 
 .. hint::
@@ -120,7 +120,7 @@ To indicate that the levels are global variables, you could use capital letters:
         ...
     )
 
-Move `level_one` from the `start_level()` function next to the new level(s) and rename it to `LEVEL_ONE`.
+Move `level_one` from the `start_game()` function next to the new level(s) and rename it to `LEVEL_ONE`.
 
 Switch between levels
 ---------------------

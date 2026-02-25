@@ -21,7 +21,6 @@ extensions = [
     'sphinx_copybutton',
     'myst_parser',
     'sphinxcontrib.cairosvgconverter',
-    'myst_parser',
     ]
 
 templates_path = ['_templates']
@@ -49,7 +48,7 @@ html_theme_options = {
 # ---- Options for PDF output ----
 
 latex_elements = {
-    'preamble': "\linespread{1.25}",
+    'preamble': r"\linespread{1.25}",
 }
 
 

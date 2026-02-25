@@ -52,7 +52,7 @@ The final step is to test whether Python is really working.
 1. create a new file in VS Code (with ``Ctrl + n`` or the menu) and save it with the name ``hello.py``.
 Make sure that there is nothing after the ``.py`` in the file name.
 2. instert the line: ``print("hello world")``
-3. click the **Run** button (▶️) at the top right.
+3. click the **Run** button (arrow icon) at the top right.
 
 A terminal should open at the bottom, showing the output of the program.
 If you see **hello world"** in the terminal, everything has worked.

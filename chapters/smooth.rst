@@ -136,10 +136,26 @@ Then specify the callback when creating a move:
     move = Move(tile="player",
                     from_x=game.x, from_y=game.y,
                     speed_x = 2, speed_y = 0,
-                    callback = player_move_finished,
+                    finished = player_move_finished,
                     )
     game.moves.append(move)
 
 .. note::
 
     Do not include round brackets after ``player_move_finished``, because ``main.py`` takes care of calling it.
+
+
+Adjusting damage events
+-----------------------
+
+Without modifications, damage from traps and monsters will be taken already when you **start moving** onto the trap.
+If you want to make it a bit nicer, apply the damage **after moving**. 
+Use the callback mechanism of the moves:
+
+.. code:: python3
+
+    # player steps on a trap
+    move = Move(
+        ...,
+        finished = take_damage,   
+    )

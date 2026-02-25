@@ -67,7 +67,7 @@ The top left position is `0/0`:
 Review the code
 ---------------
 
-Opn the file ``game.py`` in VS Code. Inspect the code. Take notes about:
+Open the file ``game.py`` in VS Code. Inspect the code. Take notes about:
 
 * code that you understand
 * code that you do not understand

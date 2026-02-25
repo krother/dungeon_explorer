@@ -149,7 +149,7 @@ To see how many coins the player has collected, you should add some kind of mone
 Let's put it at the right side of the dungeon.
 To make space for it, you need to make the window a bit more broad in `main.py`.
 
-**Change the value for `SCREEN_SIZE_X` to 740.**
+**Change the value for `SCREEN_SIZE_X` to 840.**
 
 Now you have space to draw some text there. Add the following line anywhere in the `draw()` function:
 

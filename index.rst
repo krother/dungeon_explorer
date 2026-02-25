@@ -64,7 +64,7 @@ Contents
 License
 -------
 
-© 2025 Dr. Kristian Rother
+© 2026 Dr. Kristian Rother
 
 The Python code is distributed under the conditions of the MIT License. See :download:`LICENSE.TXT` for details
 

@@ -17,7 +17,7 @@ Add doors
 ---------
 
 Lets use the characters `D` and `d` for closed and open doors.
-They correspond to the images `open_door.pny` and `closed_door.png`, respecitvely.
+They correspond to the images `open_door.png` and `closed_door.png`, respecitvely.
 Add both to the `SYMBOLS` dictionary.
 
 Open a closed door

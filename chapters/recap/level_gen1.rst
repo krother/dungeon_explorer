@@ -14,7 +14,6 @@ The following program should print an empty 10 x 10 box.
     border += "\n"
     print(level)
     center += "\n"
-    wall + floor * 8 + wall
     floor = "."
     level = border + center * 8 + border
     wall = "#"

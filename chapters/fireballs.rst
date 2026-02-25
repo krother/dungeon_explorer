@@ -108,7 +108,7 @@ Import and call the update function in ``main.py`` in the ``while`` loop after d
     from game import update
 
     while game.status == "running":
-        draw(game, images, moves)
+        draw(game, images)
         update(game)
 
 Run the game. Now you should see a fireball moving.

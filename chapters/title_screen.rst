@@ -44,7 +44,7 @@ For the text, you may want to create some empty space at the bottom of the image
     img[-100:] = 0  # last 100 pixel rows are black
     img = cv2.putText(
         img,
-        "Hello World,
+        "Hello World",
         org=(15, 490),  # x/y position of the text
         fontFace=cv2.FONT_HERSHEY_SIMPLEX,
         fontScale=1,

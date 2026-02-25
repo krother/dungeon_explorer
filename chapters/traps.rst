@@ -17,23 +17,10 @@ When the player steps on a trap, you need to call the function implemented in th
 
 .. code:: python3
 
-   game.take_damage()
+   take_damage(game)
 
 .. hint::
 
    The outcome could look like this:
 
    .. figure:: ../images/add_traps.png
-
-.. hint::
-
-   The damage will be taken already when you **start moving** onto the trap.
-   If you want to make it a bit nicer and apply the damage **after moving**, use the callback mechanism of the moves:
-
-   .. code:: python3
-
-      # player steps on a trap
-      move = Move(
-         ...,
-         callback = take_damage,   
-      )

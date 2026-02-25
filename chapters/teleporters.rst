@@ -16,7 +16,7 @@ Create a teleporter class
 -------------------------
 
 The reason you need a new class is that you need not only to store where a teleporter is, but also where it should transport the player. 
-A single tile on the map cannot hold all that information, considering you may want to have mulitple teleporters on the map.
+A single tile on the map cannot hold all that information, considering you may want to have multiple teleporters on the map.
 
 Create a new class `Teleporter` that contains the x/y-position of a teleporter and the position it teleports to:
 
