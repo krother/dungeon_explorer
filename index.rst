@@ -51,6 +51,7 @@ Contents
    chapters/skeletons.rst
    chapters/levels.rst
    chapters/more_monsters.rst
+   chapters/push_boxes.rst
    chapters/music.rst
    chapters/title_screen.rst
    chapters/explosions.rst
