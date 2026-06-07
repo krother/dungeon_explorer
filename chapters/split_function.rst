@@ -55,3 +55,60 @@ In the end, everything should work as before.
 
     This change has no effect on the game itself.
     But the new function will be useful as soon as we add more game elements that move around!
+
+Add type hints
+--------------
+
+Whenever you design a function, you need to think about **data types** that the function accepts and returns.
+It is generally a good idea to write the types into the code *explicitly*.
+In Python, these are called **type hints**.
+
+Here is a simple example:
+
+.. code:: python3
+
+   def get_next_position(x: int, y: int, direction: str) -> tuple[int, int]:
+       ...
+
+You can make the position more explicit by defining it as its own type:
+
+.. code:: python3
+
+   Position = tuple[int, int]
+
+   def get_next_position(x: int, y: int, direction: str) -> Position:
+       ...
+
+now use the position for the input parameters of the function as well:
+
+You can make the position more explicit by defining it as its own type:
+
+.. code:: python3
+
+   Position = tuple[int, int]
+
+   def get_next_position(from_pos: Position, direction: str) -> Position:
+       x, y = from_pos
+       ...
+
+The direction can be more specific as well. We could specify which directions are valid:
+
+
+.. code:: python3
+
+   from typing import Literal
+
+   Direction = Literal["up", "down", "left", "right"]
+   Position = tuple[int, int]
+
+   def get_next_position(from_pos: Position, direction: Direction) -> Position:
+       x, y = from_pos
+       ...
+
+Technically, the direction is still a normal string.
+
+If you are using VS Code, you may want to install the **Pylance** extension that checks type hints in the background and highlights warnings in the editor.
+
+.. warning::
+   
+   Type hints are only checked in ``pydantic`` classes at runtime, not in functions.

@@ -109,7 +109,7 @@ def main():
         draw(game, images, moves)
         moves = clean_moves(game, moves)
         queued_move = handle_keyboard(game)
-        if not is_player_moving(moves):
+        if not is_player_moving(moves) and queued_move:
             move_player(game, queued_move)
 
 

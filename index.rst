@@ -38,6 +38,7 @@ Contents
    chapters/stairs.rst
    chapters/smooth.rst
    chapters/coins.rst
+   chapters/secret_door.rst
    chapters/health.rst
    chapters/traps.rst
    chapters/lookup_table.rst

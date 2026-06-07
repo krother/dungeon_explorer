@@ -58,8 +58,8 @@ Theoretically, you could now create your level in the `start_game()` function by
         x=8,
         y=1,
         level=[
-            "#","#","#","#","#","#","#","#","#","#",
-            "#","€","€","€",".",".",".",".",".","#",
+            ["#","#","#","#","#","#","#","#","#","#"],
+            ["#","€","€","€",".",".",".",".",".","#"],
             ...
 
 However, this makes the level hard to read.
