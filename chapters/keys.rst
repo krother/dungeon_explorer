@@ -70,11 +70,12 @@ To draw items in multiple rows of 2 items each use the following loop in `draw()
    .. figure:: ../images/add_keys.png
 
 
-.. hint::
+Multiple keys and doors in different colors
+-------------------------------------------
 
-   In :download:`doors_keys.zip` you find doors and keys in different colors.
-   To use them, do the following:
-   
-   - download and unzip the file
-   - move the images to the ``tiles/`` folder
-   - make sure you have different symbols and names for each tile: `b:blue_key`, `r:red_key` etc.
+In :download:`doors_keys.zip` you find doors and keys in different colors.
+To use them, do the following:
+
+- download and unzip the file
+- move the images to the ``tiles/`` folder
+- make sure you have different symbols and names for each tile: `b:blue_key`, `r:red_key` etc.
