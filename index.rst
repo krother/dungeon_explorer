@@ -56,6 +56,7 @@ Contents
    chapters/music.rst
    chapters/title_screen.rst
    chapters/explosions.rst
+   chapters/effects.rst
    chapters/video.rst
    chapters/recap/README.rst
 
