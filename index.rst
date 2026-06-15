@@ -53,6 +53,7 @@ Contents
    chapters/levels.rst
    chapters/more_monsters.rst
    chapters/push_boxes.rst
+   chapters/git_repo.rst
    chapters/music.rst
    chapters/title_screen.rst
    chapters/explosions.rst
