@@ -58,6 +58,7 @@ Contents
    chapters/title_screen.rst
    chapters/explosions.rst
    chapters/effects.rst
+   chapters/save_load.rst
    chapters/video.rst
    chapters/recap/README.rst
 
