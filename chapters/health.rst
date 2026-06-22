@@ -2,6 +2,8 @@
 Health
 ======
 
+.. figure:: ../images/heart.png
+
 Sooner or later, the character may get hurt.
 It could be quite demotivating if the game ends at the first contact with anything harmful.
 Let's add **health** as a game element.

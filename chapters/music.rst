@@ -14,6 +14,11 @@ Install it from the command line with:
 
     pip install pygame
 
+on Windows, try:
+
+::
+    pip install pygame-ce
+
 .. hint::
 
     On some systems, you may need to check the `PyGame documentation <https://www.pygame.org/docs/>`__ for installation details.

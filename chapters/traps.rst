@@ -2,6 +2,8 @@
 Traps (Optional)
 ================
 
+.. figure:: ../images/trap.png
+
 Adding traps is an optional feature that you may want to work on.
 Do this if you have extra time and would like to figure out some details on your own.
 Implement the following:
