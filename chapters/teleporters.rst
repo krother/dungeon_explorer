@@ -3,6 +3,8 @@
 Teleporters 
 ===========
 
+.. figure:: ../images/teleport.png
+
 Your implementation is getting towards more and more complex features.
 In this exercise, you will add a teleporter that transports the player to a different location.
 A teleporter is more complex than the coins, keys and doors in the previous chapters.
