@@ -13,8 +13,15 @@ Then switch to your project directory, and run in a terminal:
 
 .. code::
 
-   pyinstaller main.py --add-data tiles:tiles --add-data *.ogg:.
-   --add-data .:.
+   pyinstaller main.py --add-data tiles:tiles
+   
+If you have more files than the tiles you need to add multiple ``--add-data`` commands, e.g.:
+
+.. code::
+
+   --add-data images:images    # adds the images/ folder
+   --add-data *.mp3:.          # adds all .mp3 files from the main folder
+   --add-data .:.              # adds everything in the main folder
 
 Use absolute paths for images and sounds
 ----------------------------------------
