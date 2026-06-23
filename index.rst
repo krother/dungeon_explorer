@@ -60,6 +60,7 @@ Contents
    chapters/effects.rst
    chapters/save_load.rst
    chapters/video.rst
+   chapters/executable.rst
    chapters/recap/README.rst
 
 .. topic:: Source Code
