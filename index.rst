@@ -62,6 +62,7 @@ Contents
    chapters/video.rst
    chapters/executable.rst
    chapters/recap/README.rst
+   chapters/links.rst
 
 .. topic:: Source Code
 

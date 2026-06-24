@@ -15,7 +15,7 @@ Then switch to your project directory, and run in a terminal:
 
    pyinstaller main.py --add-data tiles:tiles
    
-If you have more files than the tiles you need to add multiple ``--add-data`` commands, e.g.:
+If you have more files than the tiles you need to add multiple ``--add-data`` instructions, e.g.:
 
 .. code::
 
@@ -38,3 +38,23 @@ instead of
 .. code::
 
    img = cv2.imread("myshop.png")  # will not work in executable
+
+
+.. hint::
+
+   On MacOS, you may observe an error resulting from a version conflict between **PyQt5** and **PyQt6**.
+   Fix it by adding the following to the **pyinstaller** command:
+
+   .. code::
+
+      --exclude-module=PyQt5
+
+    The full command might look like this:
+    
+    .. code::
+
+       pyinstaller --exclude-module=PyQt5 main.py --add-data tiles:tiles --add-data *.wav:. --add-data *.mp3:. --add-data *.flac:. --add-data *.png:.
+
+.. hint::
+
+   If you manage to create an executable that runs, it is a good idea to save the exact pyinstaller command to your ``README.md`` file so that you know what to do next time.
